@@ -1,4 +1,7 @@
 # LunaTune
+[RESEARCH ON CNNs AND RNNs INTERPRETING AUDIO]...
+
+
 Predicting music genre via deep learning.
 
 ---
