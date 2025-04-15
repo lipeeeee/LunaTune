@@ -1,4 +1,3 @@
-from warnings import catch_warnings
 import source.constants as CONST
 import argparse
 
@@ -19,7 +18,7 @@ def download_dataset() -> None:
 
     try:
         subprocess.run(f"curl -L -o {tmp_zip} {url}", shell=True, executable="/bin/bash")
-        subprocess.run(f"unzip -q {tmp_zip}", shell=True, executable="/bin/bash")
+        subprocess.run(f"unzip {tmp_zip}", shell=True, executable="/bin/bash")
     except subprocess.CalledProcessError as e:
         print(f"subprocess.CalledProcessError: {e}")
         raise
@@ -48,5 +47,6 @@ if __name__ == "__main__":
         else:
             logger.info(f"Found data folder at: {CONST.DATA_FOLDER}")
 
+    logger.info(f"Finished running with exit code 0.")
     sys.exit(0)
 
